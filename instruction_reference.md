@@ -65,6 +65,21 @@ In [  pr  ] [  q:reg  ]  0  0  0  0  0  0  1  0 [  a:reg  ]  0  1 [           b:
 
 ### Comparison
 
+#### `eq`
+
+`eq q:pr, a:reg, b:reg`, `eq q:pr, a:reg, b:i10`
+
+Sets `q` if `a` is equal to `b`, and clears it otherwise.
+
+##### Encodings
+
+```
+Bit
+31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1  0
+In [  pr  ] [  q:reg  ]  0  0  1  0  0  0  1  0 [  a:reg  ]  0  0  x  x  x  x  x  x [  b:reg  ]
+In [  pr  ] [  q:reg  ]  0  0  1  0  0  0  1  0 [  a:reg  ]  0  1 [           b:i10           ]
+```
+
 #### `bit`
 
 `bit q:pr, a:reg, b:reg`, `bit q:pr, a:reg, b:i10`
@@ -88,10 +103,10 @@ In [  pr  ] [  q:reg  ]  0  0  1  0  0  0  1  1 [  a:reg  ]  0  1 [           b:
 * [`add`](#add)
 * [`and`](#and)
 * [`bit`](#bit)
+* [`eq`](#eq)
 
 <!--
 ecall
-eq
 hcall
 j
 jx
